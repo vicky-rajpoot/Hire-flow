@@ -1,0 +1,90 @@
+# ============================================
+# Core / Vendor / Build files
+# ============================================
+
+/core/
+/vendor/
+
+# If you use Composer for Drupal
+/web/core/
+/web/vendor/
+/web/sites/default/files/
+/web/sites/*/files/
+
+# ============================================
+# Environment-specific files
+# ============================================
+
+# Ignore local environment configuration
+/web/sites/*/settings.local.php
+/web/sites/*/services.local.yml
+
+# Local development files
+/.idea/
+/.vscode/
+/.env
+/.env.local
+/.DS_Store
+Thumbs.db
+
+# ============================================
+# Drupal-generated files
+# ============================================
+
+# File and image uploads (public & private)
+web/sites/default/files/
+web/sites/*/files/
+
+# Cache, logs, and temporary directories
+/tmp/
+cache/
+logs/
+web/sites/*/php
+web/sites/*/cache
+web/sites/*/private
+
+# ============================================
+# Drupal contrib and libraries
+# ============================================
+
+# Contributed modules, themes, and libraries managed by Composer
+/web/modules/contrib/
+/web/themes/contrib/
+/web/libraries/
+
+# Custom code (keep these in Git)
+!web/modules/custom/
+!web/themes/custom/
+!web/profiles/custom/
+
+# ============================================
+# Other ignored build artifacts
+# ============================================
+
+# Backup and temporary files
+*.bak
+*.tmp
+*.swp
+
+# Node dependencies (if using front-end build tools)
+node_modules/
+npm-debug.log
+yarn-error.log
+package-lock.json
+
+# ============================================
+# Drush & configuration
+# ============================================
+
+# Drush local config and backups
+/drush-backups/
+/.drush/
+/drush/contrib/
+/drush/vendor/
+
+# Config sync directory (optional — only if not versioning config)
+# /config/sync/
+
+# ============================================
+# End of file
+# ============================================
