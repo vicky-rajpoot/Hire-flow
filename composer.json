@@ -22,7 +22,14 @@
         "drupal/core-project-message": "^11.2",
         "drupal/core-recipe-unpack": "^11.2",
         "drupal/core-recommended": "^11.2",
+        "drupal/facets": "^3.0",
+        "drupal/flag": "^5.0",
         "drupal/gin": "^5.0",
+        "drupal/honeypot": "^2.2",
+        "drupal/jsonapi_extras": "^3.26",
+        "drupal/restui": "^1.22",
+        "drupal/search_api": "^1.39",
+        "drupal/search_api_solr": "^4.3",
         "drush/drush": "^13.6"
     },
     "conflict": {
