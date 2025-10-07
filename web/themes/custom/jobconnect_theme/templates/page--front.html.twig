@@ -1,0 +1,122 @@
+{# Front page layout using JobConnect components. #}
+{% set menu = [
+  { title: 'Home', url: path('<front>'), is_active: true },
+  { title: 'Find Jobs', url: '/jobs' },
+  { title: 'Companies', url: '/companies' },
+  { title: 'All Pages', url: '/pages-overview' },
+  { title: 'Job Details', url: '/job-detail' }
+] %}
+
+{{ include('jobconnect_theme:global-header', {
+  brand_name: 'JobConnect',
+  brand_url: path('<front>'),
+  menu_links: menu,
+  sign_in: { title: 'Sign In', url: '/auth/sign-in' },
+  cta: { title: 'Post a Job', url: '/post-job' }
+}, with_context = false) }}
+
+{% set hero_data = {
+  title: 'Find Your',
+  highlight_words: ['Dream Job', 'Perfect Career', 'Next Opportunity'],
+  description: 'Connect with top employers and discover opportunities that match your skills. Your next career move starts here.',
+  primary_cta: { title: 'Start Your Search', url: '/jobs' },
+  secondary_cta: { title: 'Upload Resume', url: '/upload-resume' },
+  search_form: {
+    action: '/jobs',
+    method: 'get',
+    fields: [
+      { name: 'keywords', label: 'Job Title or Keywords', placeholder: 'e.g. Software Engineer' },
+      { name: 'location', label: 'Location', placeholder: 'e.g. San Francisco, CA' }
+    ],
+    submit_label: 'Search Jobs'
+  }
+} %}
+
+{{ include('jobconnect_theme:hero-banner', hero_data, with_context = false) }}
+
+{{ include('jobconnect_theme:stats-grid', {}, with_context = false) }}
+
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-display font-bold text-gray-900 mb-4">Recent Job Postings</h2>
+      <p class="text-xl text-gray-600">Discover the latest opportunities from top companies</p>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for job in [
+        {
+          title: 'Senior Software Engineer',
+          company: 'TechCorp',
+          location: 'San Francisco, CA',
+          salary: '20k - 80k • Full-time',
+          badges: [
+            { label: 'Full-time', style: 'bg-blue-100 text-blue-800' },
+            { label: 'Remote', style: 'bg-green-100 text-green-800' }
+          ],
+          tags: ['JavaScript', 'React', 'Node.js', 'AWS'],
+          link: '/job-detail'
+        },
+        {
+          title: 'Financial Analyst',
+          company: 'GlobalFinance',
+          location: 'New York, NY',
+          salary: '0k - 30k • Full-time',
+          badges: [
+            { label: 'Full-time', style: 'bg-blue-100 text-blue-800' }
+          ],
+          tags: ['SQL', 'Tableau', 'Forecasting'],
+          link: '/job-detail'
+        },
+        {
+          title: 'Digital Marketing Manager',
+          company: 'DigitalMax',
+          location: 'Los Angeles, CA',
+          salary: '5k - 10k • Full-time',
+          badges: [
+            { label: 'Full-time', style: 'bg-blue-100 text-blue-800' },
+            { label: 'Hybrid', style: 'bg-purple-100 text-purple-800' }
+          ],
+          tags: ['SEO', 'Campaigns', 'Analytics'],
+          link: '/job-detail'
+        }
+      ] %}
+        {{ include('jobconnect_theme:job-card', job, with_context = false) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-display font-bold text-gray-900 mb-4">Top Companies Hiring</h2>
+      <p class="text-xl text-gray-600">Connect with industry leaders recruiting right now.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      {% for company in [
+        {
+          name: 'TechCorp',
+          summary: 'Leading technology company',
+          location: 'San Francisco, CA',
+          rating: '4.8 ★',
+          size: 'Enterprise • 5000+',
+          open_roles: '45 open roles',
+          link: '/company/techcorp'
+        },
+        {
+          name: 'GlobalFinance',
+          summary: 'Financial services leader',
+          location: 'New York, NY',
+          rating: '4.6 ★',
+          size: 'Large • 1200',
+          open_roles: '32 open roles',
+          link: '/company/globalfinance'
+        }
+      ] %}
+        {{ include('jobconnect_theme:company-card', company, with_context = false) }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{{ include('jobconnect_theme:footer', {}, with_context = false) }}

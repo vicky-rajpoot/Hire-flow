@@ -1,0 +1,32 @@
+<footer class="bg-gray-900 text-white py-16">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-4 gap-8">
+      <div>
+        <h3 class="text-2xl font-display font-bold mb-4">{{ brand }}</h3>
+        <p class="text-gray-400 mb-4">{{ description }}</p>
+        {% if social_links %}
+          <div class="flex space-x-4">
+            {% for link in social_links %}
+              <a href="{{ link.url }}" class="text-gray-400 hover:text-white transition-colors">{{ link.title }}</a>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+      {% for column in columns %}
+        <div>
+          <h4 class="font-semibold mb-4">{{ column.title }}</h4>
+          {% if column.links %}
+            <ul class="space-y-2 text-gray-400">
+              {% for link in column.links %}
+                <li><a href="{{ link.url }}" class="hover:text-white transition-colors">{{ link.title }}</a></li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+      <p>{{ copyright }}</p>
+    </div>
+  </div>
+</footer>

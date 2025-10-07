@@ -1,0 +1,44 @@
+name: Site footer
+status: stable
+description: Footer with multi-column navigation and social links.
+props:
+  type: object
+  properties:
+    brand:       { type: string, default: 'JobConnect' }
+    description: { type: string, default: 'Connecting talent with opportunity. Find your dream job or hire the perfect candidate.' }
+    social_links:
+      type: array
+      items:
+        type: object
+        properties:
+          title: { type: string }
+          url:   { type: string }
+      default:
+        - { title: 'Twitter',  url: '#' }
+        - { title: 'LinkedIn', url: '#' }
+        - { title: 'Facebook', url: '#' }
+    columns:
+      type: array
+      items:
+        type: object
+        properties:
+          title: { type: string }
+          links:
+            type: array
+            items:
+              type: object
+              properties:
+                title: { type: string }
+                url:   { type: string }
+      default:
+        - title: 'For Job Seekers'
+          links:
+            - { title: 'Browse Jobs',   url: '/jobs' }
+            - { title: 'Create Profile', url: '/profile' }
+        - title: 'For Employers'
+          links:
+            - { title: 'Post a Job',           url: '#' }
+            - { title: 'Recruiting Solutions', url: '#' }
+    copyright:
+      type: string
+      default: '© 2024 JobConnect. All rights reserved.'

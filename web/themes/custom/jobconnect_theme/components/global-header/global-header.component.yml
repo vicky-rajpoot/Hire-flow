@@ -1,0 +1,33 @@
+name: Global header
+status: stable
+description: Primary navigation bar with brand, menu links, and optional call-to-action.
+props:
+  type: object
+  required: [brand_name, brand_url, menu_links]
+  properties:
+    brand_name: { type: string, default: 'JobConnect' }
+    brand_url:  { type: string, default: '/' }
+    menu_links:
+      type: array
+      items:
+        type: object
+        required: [title]
+        properties:
+          title:     { type: string }
+          url:       { type: string }
+          is_active: { type: boolean }
+          new_tab:   { type: boolean }
+      default:
+        - { title: 'Home',      url: '/',       is_active: true }
+        - { title: 'Find Jobs', url: '/jobs' }
+        - { title: 'Companies', url: '/companies' }
+    sign_in:
+      type: object
+      properties:
+        title: { type: string, default: 'Sign In' }
+        url:   { type: string, default: '/auth/sign-in' }
+    cta:
+      type: [object, 'null']
+      properties:
+        title: { type: string }
+        url:   { type: string }

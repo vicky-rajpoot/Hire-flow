@@ -1,0 +1,5 @@
+name: 'job_application'
+type: module
+description: 'Custom operations for job applications flow.'
+package: Custom
+core_version_requirement: ^10 || ^11

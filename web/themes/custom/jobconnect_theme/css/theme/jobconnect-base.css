@@ -1,0 +1,93 @@
+:root {
+  --primary: #1a365d;
+  --secondary: #718096;
+  --accent: #319795;
+  --success: #38a169;
+  --warning: #d69e2e;
+  --background: #fafafa;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: #1f2937;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent) 0%, #2c7a7b 100%);
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(49, 151, 149, 0.3);
+}
+
+.job-card,
+.category-card,
+.testimonial-card,
+.company-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.job-card:hover,
+.category-card:hover,
+.testimonial-card:hover,
+.company-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.12);
+}
+
+.nav-blur {
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.company-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff;
+  padding: 8px;
+}
+
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  border-radius: 9999px;
+  background: rgba(49, 151, 149, 0.12);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.stats-counter {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.badge-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  background: rgba(56, 161, 105, 0.18);
+  color: #2f855a;
+  font-size: 0.85rem;
+  font-weight: 600;
+}

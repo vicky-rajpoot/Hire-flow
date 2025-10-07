@@ -1,0 +1,19 @@
+name: Stats grid
+status: stable
+description: Animated counters for key metrics.
+props:
+  type: object
+  properties:
+    items:
+      type: array
+      items:
+        type: object
+        required: [label, value]
+        properties:
+          label: { type: string }
+          value: { type: integer }
+      default:
+        - { label: 'Active Jobs',     value: 50000 }
+        - { label: 'Companies',       value: 15000 }
+        - { label: 'Job Seekers',     value: 250000 }
+        - { label: 'Success Rate %',  value: 95 }

@@ -1,0 +1,3 @@
+administer job_application:
+  title: 'Administer job applicationss'
+  restrict access: true

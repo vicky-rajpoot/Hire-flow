@@ -1,0 +1,40 @@
+name: Hero banner
+status: experimental
+description: Featured hero section with animated headline and calls to action.
+props:
+  type: object
+  properties:
+    title: { type: string, default: 'Find Your Next Opportunity' }
+    highlight_words:
+      type: array
+      items: { type: string }
+      default: ['Dream Job', 'Perfect Career', 'Next Opportunity']
+    description:
+      type: string
+      default: 'Connect with top employers and discover opportunities that match your skills.'
+    primary_cta:
+      type: object
+      properties:
+        title: { type: string, default: 'Start Your Search' }
+        url:   { type: string, default: '/jobs' }
+    secondary_cta:
+      type: [object, 'null']
+      properties:
+        title: { type: string }
+        url:   { type: string }
+    search_form:
+      type: [object, 'null']
+      properties:
+        action: { type: string }
+        method: { type: string, default: 'get' }
+        fields:
+          type: array
+          items:
+            type: object
+            required: [name]
+            properties:
+              name:        { type: string }
+              label:       { type: string }
+              placeholder: { type: string }
+              type:        { type: string, default: 'text' }
+        submit_label: { type: string, default: 'Search Jobs' }

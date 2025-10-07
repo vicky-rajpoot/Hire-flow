@@ -1,0 +1,26 @@
+name: Job card
+status: experimental
+description: Highlighted job listing card with apply CTA.
+props:
+  type: object
+  properties:
+    title:    { type: string, default: 'Senior Software Engineer' }
+    company:  { type: string, default: 'TechCorp' }
+    location: { type: string, default: 'San Francisco, CA' }
+    salary:   { type: string, default: '20k - 80k • Full-time' }
+    badges:
+      type: array
+      items:
+        type: object
+        properties:
+          label: { type: string }
+          style: { type: string }
+      default:
+        - { label: 'Full-time', style: 'bg-blue-100 text-blue-800' }
+        - { label: 'Remote',    style: 'bg-green-100 text-green-800' }
+    tags:
+      type: array
+      items: { type: string }
+      default: [JavaScript, React, 'Node.js']
+    link:     { type: string, default: '/job-detail' }
+    featured: { type: [string, 'null'], default: 'New' }

@@ -1,0 +1,10 @@
+entity.job_application.edit_form:
+  route_name: entity.job_application.edit_form
+  group: job_application
+  title: 'Edit'
+
+entity.job_application.delete_form:
+  route_name: entity.job_application.delete_form
+  group: job_application
+  title: 'Delete'
+  weight: 10

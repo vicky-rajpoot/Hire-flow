@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - job_application
+id: job_application_save_action
+label: 'Save job applicationss'
+type: job_application
+plugin: entity:save_action:job_application
+configuration: {  }

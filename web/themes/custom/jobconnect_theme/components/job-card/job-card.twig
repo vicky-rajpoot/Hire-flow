@@ -1,0 +1,31 @@
+<article class="job-card rounded-2xl p-6">
+  <div class="flex items-start justify-between mb-4">
+    <div class="company-logo bg-gray-100 flex items-center justify-center">
+      <span class="text-lg font-bold text-gray-600">{{ company|slice(0, 2)|upper }}</span>
+    </div>
+    {% if featured %}
+      <span class="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">{{ featured }}</span>
+    {% endif %}
+  </div>
+  <h3 class="font-bold text-lg text-gray-900 mb-2">{{ title }}</h3>
+  <p class="text-gray-600 mb-2">{{ company }} • {{ location }}</p>
+  <p class="text-teal-600 font-semibold mb-4">{{ salary }}</p>
+  {% if badges %}
+    <div class="flex flex-wrap gap-2 mb-3">
+      {% for badge in badges %}
+        <span class="px-3 py-1 rounded-full text-sm font-medium {{ badge.style }}">{{ badge.label }}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% if tags %}
+    <div class="flex flex-wrap gap-2 mb-4">
+      {% for tag in tags %}
+        <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">{{ tag }}</span>
+      {% endfor %}
+    </div>
+  {% endif %}
+  <div class="flex justify-between items-center">
+    <a href="{{ link }}" class="text-teal-600 hover:text-teal-700 font-medium">View Details</a>
+    <a href="{{ link }}" class="btn-primary text-white px-6 py-2 rounded-lg font-medium">Apply Now</a>
+  </div>
+</article>

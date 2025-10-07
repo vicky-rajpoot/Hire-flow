@@ -1,0 +1,19 @@
+name: JobConnect Theme
+package: Custom
+core_version_requirement: ^10 || ^11
+type: theme
+description: 'Drupal implementation of the JobConnect career site using Single Directory Components.'
+base theme: bootstrap5
+libraries:
+  - jobconnect_theme/global-styling
+components:
+  namespaces:
+    jobconnect: components
+regions:
+  header: Header
+  hero: Hero
+  highlighted: Highlighted
+  content: Content
+  sidebar_first: Sidebar first
+  sidebar_second: Sidebar second
+  footer: Footer

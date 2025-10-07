@@ -1,0 +1,7 @@
+entity.job_application.settings:
+  path: 'admin/structure/job-application'
+  defaults:
+    _form: '\Drupal\job_application\Form\JobApplicationsSettingsForm'
+    _title: 'Job Applications'
+  requirements:
+    _permission: 'administer job_application'

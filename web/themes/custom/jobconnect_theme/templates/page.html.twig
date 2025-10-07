@@ -1,0 +1,38 @@
+{#
+  Basic page template that composes global components. Content regions remain
+  flexible so Drupal layouts and blocks can populate them.
+#}
+{% set menu = [
+  { title: 'Home', url: path('<front>'), is_active: is_front },
+  { title: 'Find Jobs', url: '#', is_active: false },
+  { title: 'Companies', url: '/companies' },
+  { title: 'All Pages', url: '/pages-overview' },
+  { title: 'Job Details', url: '/job-detail' }
+] %}
+
+{{ include('jobconnect_theme:global-header', {
+  brand_name: 'JobConnect',
+  brand_url: path('<front>'),
+  menu_links: menu,
+  sign_in: { title: 'Sign In', url: '/auth/sign-in' },
+  cta: { title: 'Post a Job', url: '/post-job' }
+}, with_context = false) }}
+
+<div class="pt-16">
+  {% if page.hero %}
+    {{ page.hero }}
+  {% endif %}
+
+  {% if page.highlighted %}
+    <div class="py-8 bg-teal-50">{{ page.highlighted }}</div>
+  {% endif %}
+
+  <main role="main" class="min-h-screen">
+    <a id="main-content" tabindex="-1"></a>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      {{ page.content }}
+    </div>
+  </main>
+</div>
+
+{{ include('jobconnect_theme:footer', {}, with_context = false) }}

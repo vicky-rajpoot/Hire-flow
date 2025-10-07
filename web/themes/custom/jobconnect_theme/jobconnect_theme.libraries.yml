@@ -1,0 +1,17 @@
+global-styling:
+  version: 1.x
+  css:
+    theme:
+      css/theme/jobconnect-base.css: {}
+      https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css: { type: external }
+  js:
+    https://cdn.tailwindcss.com: { type: external }
+    https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js: { type: external }
+    https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js: { type: external }
+    https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js: { type: external }
+    https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js: { type: external }
+    https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js: { type: external }
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings

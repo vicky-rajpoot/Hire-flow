@@ -1,0 +1,11 @@
+entity.job_application.settings:
+  title: 'Job Applications'
+  description: 'Configure a Job Applications entity type.'
+  route_name:  entity.job_application.settings
+  parent: system.admin_structure
+
+entity.job_application.collection:
+  title: 'Job Applicationss'
+  description: 'List of job applicationss.'
+  route_name: entity.job_application.collection
+  parent: system.admin_content

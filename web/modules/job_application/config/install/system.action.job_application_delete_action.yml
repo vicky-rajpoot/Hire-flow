@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - job_application
+id: job_application_delete_action
+label: 'Delete job applicationss'
+type: job_application
+plugin: entity:delete_action:job_application
+configuration: {  }

@@ -1,0 +1,17 @@
+name: Company card
+status: experimental
+description: Company showcase tile with logo, description, and open roles count.
+props:
+  type: object
+  properties:
+    name:        { type: string, default: 'TechCorp' }
+    summary:     { type: string, default: 'Leading technology company' }
+    location:    { type: string, default: 'San Francisco, CA' }
+    rating:      { type: string, default: '4.8 ★' }
+    size:        { type: string, default: 'Enterprise • 5000+' }
+    open_roles:  { type: string, default: '45 open positions' }
+    link:        { type: string, default: '/company/techcorp' }
+    tags:
+      type: array
+      items: { type: string }
+      default: [Engineering, Product, Data]

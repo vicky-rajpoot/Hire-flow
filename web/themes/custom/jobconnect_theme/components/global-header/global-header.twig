@@ -1,0 +1,28 @@
+<nav class="fixed top-0 left-0 right-0 z-50 nav-blur border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center">
+        <a class="text-2xl font-display font-bold text-gray-900" href="{{ brand_url }}">{{ brand_name }}</a>
+      </div>
+      {% if menu_links %}
+        <div class="hidden md:flex items-center space-x-8">
+          {% for item in menu_links %}
+            {% set classes = [
+              item.is_active ? 'text-teal-600 font-medium' : 'text-gray-700 font-medium hover:text-teal-600',
+              'transition-colors'
+            ] %}
+            <a href="{{ item.url }}" class="{{ classes|join(' ') }}"{% if item.new_tab %} target="_blank" rel="noopener"{% endif %}>{{ item.title }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+      <div class="flex items-center space-x-4">
+        {% if sign_in %}
+          <a href="{{ sign_in.url }}" class="text-gray-700 hover:text-teal-600 font-medium transition-colors">{{ sign_in.title }}</a>
+        {% endif %}
+        {% if cta %}
+          <a href="{{ cta.url }}" class="btn-primary text-white px-6 py-2 rounded-lg font-medium">{{ cta.title }}</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</nav>
