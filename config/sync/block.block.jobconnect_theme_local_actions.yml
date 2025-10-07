@@ -1,0 +1,20 @@
+uuid: 40a046e4-1633-4c08-9b65-10727812bdde
+langcode: en
+status: true
+dependencies:
+  theme:
+    - jobconnect_theme
+_core:
+  default_config_hash: MBqG1B5mr5-fPSCDyTR6z2zVTRxZ10XeS_pAw6C7za4
+id: jobconnect_theme_local_actions
+theme: jobconnect_theme
+region: content
+weight: -2
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

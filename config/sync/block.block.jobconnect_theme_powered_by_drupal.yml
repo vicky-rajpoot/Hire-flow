@@ -1,0 +1,22 @@
+uuid: a9d65f18-a99e-4e3c-b6b9-290305cb4413
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - jobconnect_theme
+_core:
+  default_config_hash: 2_xxaOb8b_0AUgYFdJLxIBDDwufyh6YozhGfBd97p38
+id: jobconnect_theme_powered_by_drupal
+theme: jobconnect_theme
+region: footer
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

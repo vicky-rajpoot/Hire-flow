@@ -1,0 +1,22 @@
+uuid: c466c35f-4def-4833-b84e-5e0c2ae9f344
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - jobconnect_theme
+_core:
+  default_config_hash: S0Y16qIQfKiOEzWlddOGk3u_BKwAruAheA8VVFfGbLc
+id: jobconnect_theme_help
+theme: jobconnect_theme
+region: content
+weight: -3
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }
